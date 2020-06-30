@@ -1,0 +1,84 @@
+#------------------ Basic geometry :) ------------------#
+
+from math import sqrt
+import pymsgbox
+
+print("Commands are:")
+print("pyth - Pythagorean Theorem")
+print("comp - Complementary Angle")
+print("supp - Supplementary Angle")
+print("circ - Circle Menu")
+print(" ")
+op = str(input("Command: "))
+
+if op == "pyth":
+    a = int(input("A = "))
+    b = int(input("B = "))
+    c = ("Your answer is: ", round(sqrt((a*a)+(b*b))))
+    pymsgbox.alert(text=c, title="Geometry", button="Okay")
+
+elif op == "comp":
+    x = int(input("Angle 1: "))
+    c = ("The supplementary angle is: "), round(90 - x)
+    if x < 90:
+        pymsgbox.alert(text=c, title="Geometry", button="Okay")
+    else:
+        print("Your angle is equal to or higher than 90, therefore not complementary.")
+
+elif op == "supp":
+    x = int(input("Angle 1: "))
+    c = ("The complementary angle is: "), round(180 - x)
+    if x < 180:
+        pymsgbox.alert(text=c, title="Geometry", button="Okay")
+    else:
+        print("Your angle is equal to or higher than 180, therefore not supplementary.")
+
+
+
+elif op == "circ":
+    print(" ")
+    print(" ")
+    print("Commands are:")
+    print("circ - Circumference")
+    print("rad - Radius")
+    print("area - Area")
+    print("semi - Semicircle")
+    print(" ")
+    op2 = str(input("Circle command: "))
+
+    if op2 == "circ":
+        r = int(input("Radius: "))
+        c = ("Your circumference of your circle is: "), round((2*3.141592653589793)*r)
+        pymsgbox.alert(text=c, title="Geometry", button="Okay")
+
+    elif op2 == "rad":
+        d = int(input("Diameter: "))
+        c = "Your radius of your circle is: ", round(d / 2)
+        pymsgbox.alert(text=c, title="Geometry", button="Okay")
+
+    elif op2 == "area":
+        r = int(input("Radius: "))
+        c = ("The area of your circle is: "), round(3.141592653589793*(r*r)), ("Squared")
+        pymsgbox.alert(text=c, title="Geometry", button="Okay")
+
+    elif op2 == "semi":
+        print(" ")
+        op3 = str(input("Area (area) or Circumference (circ): "))
+
+
+        if op3 == "area":
+            r = int(input("Radius: "))
+            c = ("Your area of your semicircle is: "), round(3.141592653589793 * (r * r)/2), ("Squared")
+            pymsgbox.alert(text=c, title="Geometry", button="Okay")
+
+        elif op3 == "circ":
+            r = int(input("Radius: "))
+            c = ("Your circumference of your semicircle is: "), round((3.141592653589793 * r) + (2 * r))
+            pymsgbox.alert(text=c, title="Geometry", button="Okay")
+        else:
+            print("Invalid Input")
+
+else:
+    print("Invalid Input")
+    
+#------------------ FURRO404 ------------------#
